@@ -9,15 +9,9 @@
 <script>
 export default {
   name: "AllFriends",
+  props: ["friends"],
   data() {
-    return {
-      friends: [
-        { name: "Alex", online: true },
-        { name: "Bob", online: false },
-        { name: "Doe", online: true },
-        { name: "George", online: false }
-      ]
-    };
+    return {};
   }
 };
 </script>
