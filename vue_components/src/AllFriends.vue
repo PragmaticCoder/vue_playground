@@ -7,7 +7,14 @@
 export default {
   name: "AllFriends",
   data() {
-    return {};
+    return {
+      friends: [
+        { name: "Alex", online: true },
+        { name: "Bob", online: false },
+        { name: "Doe", online: true },
+        { name: "George", online: false }
+      ]
+    };
   }
 };
 </script>
