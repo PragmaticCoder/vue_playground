@@ -3,7 +3,8 @@ new Vue({
     data: {
         title: 'Becoming a Vue Ninja',
         name: 'Alvi',
-        url: 'https://github.com/PragmaticCoder'
+        url: 'https://github.com/PragmaticCoder',
+        classes: ['one', 'two']
     },
     methods: {
         greet: function (time) {
