@@ -18,8 +18,9 @@
     <div id="app">
         <h2>{{ title }}</h2>
         <p>{{ greet('morning') }}</p>
-        <a v-bind:href="url">Github Link</a>
-        <div v-bind:class="classes">Dynamically changing classes</div>
+        <a :href="url">Github Link</a>
+        <div :class="classes">Dynamically changing classes</div>
+        <input text="" :value="name">
     </div>
     <script src="app.js"></script>
 </body>
