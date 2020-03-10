@@ -6,7 +6,7 @@
         <h4>
           <b>{{ post.title }}</b>
         </h4>
-        <p>{{ post.body }}</p>
+        <p>{{ post.body | snippet }}</p>
       </div>
     </div>
   </div>
