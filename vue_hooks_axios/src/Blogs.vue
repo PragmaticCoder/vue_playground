@@ -24,9 +24,14 @@ export default {
     };
   },
   created() {
-    axios.get("https://jsonplaceholder.typicode.com/posts/").then(response => {
-      this.posts = response.data;
-    });
+    axios
+      .get("https://jsonplaceholder.typicode.com/posts/")
+      .then(response => {
+        this.posts = response.data;
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 };
 </script>
