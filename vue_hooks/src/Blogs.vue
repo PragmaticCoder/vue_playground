@@ -1,6 +1,7 @@
 <template>
   <div class="blogs">
     <h2>{{ blogTitle }}</h2>
+    <button @click="changeTitle">Change Blog Title</button>
   </div>
 </template>
 
@@ -12,6 +13,12 @@ export default {
       blogTitle: "Blog: Vue Hooks Gotchas"
     };
   },
+  methods: {
+    changeTitle() {
+      this.blogTitle =
+        "Blog Title Changed! Should fire before Update before rendering the changes!";
+    }
+  },
   beforeCreate() {
     alert("beforeCreate hook fired!");
   },
@@ -20,8 +27,10 @@ export default {
       "created hook fired! At this point, everything has been created but not rendered!. This is where we can fetch some data from external api for example and display it after"
     );
   },
-  afterCreate() {
-    alert("afterCreate hook fired!");
+  beforeUpdate() {
+    alert(
+      "beforeUpdate hook fired! This will be fired before updating the Data"
+    );
   }
 };
 </script>
