@@ -18,7 +18,7 @@ export default {
   },
   data() {
     return {
-      title: "Welcome to Vue.js Hooks Tutorial"
+      title: "Welcome to Vue.js Hooks API Call Tutorial"
     };
   }
 };
