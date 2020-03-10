@@ -1,7 +1,8 @@
 <template>
   <div class="blogs">
     <h2>{{ blogTitle }}</h2>
-    <Cards :posts="posts" />
+    <input type="text" v-model="searchTerm" />
+    <Cards :posts="filteredPosts" />
   </div>
 </template>
 
@@ -17,8 +18,14 @@ export default {
   data() {
     return {
       blogTitle: "Blog: Vue Hooks API Gotchas",
-      posts: []
+      posts: [],
+      searchTerm: ""
     };
+  },
+  computed: {
+    filteredPosts() {
+      return this.posts.filter(post => post.title.match(this.searchTerm));
+    }
   },
   created() {
     axios
