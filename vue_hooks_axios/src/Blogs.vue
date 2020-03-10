@@ -1,19 +1,25 @@
 <template>
   <div class="blogs">
     <h2>{{ blogTitle }}</h2>
-    <button @click="changeTitle">Change Blog Title</button>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "Blogs",
   data() {
     return {
-      blogTitle: "Blog: Vue Hooks API Gotchas"
+      blogTitle: "Blog: Vue Hooks API Gotchas",
+      posts: []
     };
   },
-  created() {}
+  created() {
+    axios.get("https://jsonplaceholder.typicode.com/posts/").then(response => {
+      this.posts = response.data;
+    });
+  }
 };
 </script>
 
